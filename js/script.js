@@ -1,5 +1,9 @@
+// importar a função ehumCpf() de valida-cpf 
+import ehumCpf from "./valida-cpf.js";
 
-// pego todos os campos com o matributo required = obrigatorio 
+
+
+// pego todos os campos com o  atributo required = obrigatorio 
 const camposDoFormulario = document.querySelectorAll("[required]")
 
 // escutador de campos com addeventlistner
@@ -9,5 +13,7 @@ camposDoFormulario.forEach((campo)=>{
 
 
 function verificaCampo(campo){
-    console.log(campo);
+    if(campo.name == "cpf" && campo.value.length >= 11){
+    ehumCpf(campo)
+    }
 }
