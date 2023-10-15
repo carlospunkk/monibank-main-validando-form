@@ -1,5 +1,6 @@
 // importar a função ehumCpf() de valida-cpf 
 import ehumCpf from "./valida-cpf.js";
+import ehMaiorDeIdade from "./valida-idade.js";
 
 
 
@@ -15,5 +16,8 @@ camposDoFormulario.forEach((campo)=>{
 function verificaCampo(campo){
     if(campo.name == "cpf" && campo.value.length >= 11){
     ehumCpf(campo)
+    }
+    if(campo.name == "aniversario" && campo.value != ""){
+    ehMaiorDeIdade(campo)
     }
 }
